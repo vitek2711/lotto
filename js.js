@@ -46,6 +46,8 @@ while (numbersArray.length < 100) {
 
 function clear() {
     number.innerHTML = '';
+    allnumbers.innerHTML = '';
+    shownAllNumbers.length = 0;
 }
 
 // Показ выпавшего номера
@@ -53,7 +55,7 @@ button.addEventListener("click", () => {
     number.innerHTML = numbersArray[0];
 
     // Запсываем значения  в массив выбранных цифр
-    shownAllNumbers.push(numbersArray.shift(0))
+    shownAllNumbers.push(numbersArray[0])
     allnumbers.innerHTML = shownAllNumbers;
 
     //Удаляем первый элемент из массива
