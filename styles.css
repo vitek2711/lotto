@@ -13,20 +13,25 @@ body, html {
     background: url(background.jpg);
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: calc(50% - 250px);
+    position: absolute;
+}
+
 .wiget {
     display: flex;
     width: 400px;
     height: 500px;
-    padding: 10px;
+    padding: 30px;
     background-color: #d4d3d3;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    left: 0;
-    right: 0;
-    top: calc(50% - 250px);
-    margin: 0 auto;
-    position: absolute;
+    justify-content: space-between;    
     border-radius: 20px;
     border: 5px solid red;
     box-shadow: -webkit-box-shadow: -1px 3px 46px 12px rgba(234, 62, 222, 0.2);
@@ -39,7 +44,6 @@ body, html {
     color: red;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 40px;
 }
 
 .numberplace {
@@ -90,24 +94,34 @@ body, html {
     background: rgb(32, 3, 59);
 }
 
-.place {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.numberstitle {
-    font-size: 18px;
-    color: rgb(156, 10, 132);
-    font-weight: 700;
-}
-
 .allnumbers {
     width: 100%;
     height: 30px;
     border-radius: 5px;
+}
+
+/* Numbers block */
+.numbers-block {
+    width: 300px;
+    height: 500px;
+    background-color: #d4d3d3;
+    border: 5px solid #fa9a00;
+    border-radius: 10px;
+}
+
+.place {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.numberstitle {
+    font-size: 24px;
+    color: rgb(204, 2, 46);
+    font-weight: 700;
 }
