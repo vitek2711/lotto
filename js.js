@@ -1,6 +1,8 @@
 'use strict'
 
 // Variables
+var audio1 = new Audio('/tihiy-slabyiy-schelchok.mp3');
+var audio2 = new Audio('/korotkiy-schelchok-pistoletnoy-oboymyi.mp3')
 const button = document.querySelector('.button');
 let number = document.querySelector('.number');
 const reset = document.querySelector('.reset');
@@ -31,6 +33,17 @@ function printAndAddRandomNumber() {
     };
 };
 
+//Функция проигрывания аудиофайла запуска
+function playAudio1() {
+    audio1.play();
+}
+
+//Функция проигрывания аудиофайла сброса
+
+function playAudio2() {
+    audio2.play();
+}
+
 //Запись выпавшего номера в стек выпавших номеров
 function addShownNumbersInArray() {
     let shownNumber = numbersArray[0];
@@ -52,6 +65,8 @@ function clear() {
 
 // Показ выпавшего номера
 button.addEventListener("click", () => {
+
+    playAudio1();
     number.innerHTML = numbersArray[0];
 
     // Запсываем значения  в массив выбранных цифр
@@ -66,6 +81,7 @@ button.addEventListener("click", () => {
 
 //Очистка выпавшего номера
 reset.addEventListener('click', () => {
+    playAudio2()
     clear();
 });
 
