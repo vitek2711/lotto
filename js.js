@@ -1,8 +1,8 @@
 'use strict'
 
 // Variables
-var audio1 = new Audio('/tihiy-slabyiy-schelchok.mp3');
-var audio2 = new Audio('/korotkiy-schelchok-pistoletnoy-oboymyi.mp3')
+var audio1 = new Audio('tihiy-slabyiy-schelchok.mp3');
+var audio2 = new Audio('korotkiy-schelchok-pistoletnoy-oboymyi.mp3')
 const button = document.querySelector('.button');
 let number = document.querySelector('.number');
 const reset = document.querySelector('.reset');
