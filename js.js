@@ -65,18 +65,31 @@ function clear() {
 
 // Показ выпавшего номера
 button.addEventListener("click", () => {
-
+    // Щелчок по нажатию
     playAudio1();
+    // Показ выпавшего номера по щелчку
     number.innerHTML = numbersArray[0];
 
-    // Запсываем значения  в массив выбранных цифр
-    shownAllNumbers.push(numbersArray[0])
-    allnumbers.innerHTML = shownAllNumbers;
+    // Функция для добавления нового кружка с элементом массива
+function addCircle() {
+    // Проверяем, есть ли еще элементы в массиве
+    if (numbersArray.length > 0) {
+      // Создаем новый кружок
+      let circle = document.createElement('div');
+      circle.classList.add('circle');
+      circle.textContent = numbersArray.shift(); // Берем и удаляем первый элемент массива
+      allnumbers.appendChild(circle);
+    } else {
+      alert("Больше нет элементов для добавления!");
+    }
+  };
 
     //Удаляем первый элемент из массива
     numbersArray.shift(0);
     console.log(numbersArray)
+    addCircle()
 });
+
 
 
 //Очистка выпавшего номера
