@@ -9,8 +9,7 @@ body, html {
     color: #fff;
     font-weight: 400;
     font-size: 16px;
-    background-size: cover;
-    background: url(background.jpg);
+    background: url(background.jpg) 75% 123%;
 }
 
 .wrapper {
@@ -129,6 +128,7 @@ body, html {
     background-color: #d4d3d3;
     border: 5px solid #bd7850;
     border-radius: 10px;
+    opacity: 95%;
 }
 
 .place {
