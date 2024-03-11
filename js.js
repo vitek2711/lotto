@@ -83,9 +83,6 @@ function addCircle() {
       alert("Больше нет элементов для добавления!");
     }
   };
-
-    //Удаляем первый элемент из массива
-    numbersArray.shift(0);
     console.log(numbersArray)
     addCircle()
 });
