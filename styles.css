@@ -33,8 +33,6 @@ body, html {
     justify-content: space-between;    
     border-radius: 20px;
     border: 5px solid red;
-    box-shadow: -webkit-box-shadow: -1px 3px 46px 12px rgba(234, 62, 222, 0.2);
-    -moz-box-shadow: -1px 3px 46px 12px rgba(234, 62, 222, 0.2);
     box-shadow: -1px 3px 46px 12px rgba(234, 62, 222, 0.2);
 }
 
@@ -155,4 +153,15 @@ body, html {
     font-size: 25px;
     color: #bd7850;
     overflow-wrap: break-word;
+}
+
+/* adaptive */
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column-reverse;
+        top: 0;
+        align-items: center;
+        gap: 10px;
+    }
 }
