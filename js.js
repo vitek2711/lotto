@@ -7,6 +7,8 @@ const button = document.querySelector('.button');
 let number = document.querySelector('.number');
 const reset = document.querySelector('.reset');
 let allnumbers = document.querySelector('.allnumbers');
+let restNumber = document.querySelector('.restnumber');
+let restnum = 100;
 
 
 // Создаем пустой массив для хранения выпавших чисел
@@ -44,6 +46,7 @@ function playAudio2() {
     audio2.play();
 }
 
+
 //Запись выпавшего номера в стек выпавших номеров
 function addShownNumbersInArray() {
     let shownNumber = numbersArray[0];
@@ -56,12 +59,16 @@ while (numbersArray.length < 100) {
 };
 
 //Функция очистки поля вывода
-
 function clear() {
     number.innerHTML = '';
     allnumbers.innerHTML = '';
     shownAllNumbers.length = 0;
 }
+
+// Функция показа количества оставшихся шаров
+function showRestNumber() { 
+   restNumber.innerHTML = --restnum;
+};
 
 // Показ выпавшего номера
 button.addEventListener("click", () => {
@@ -81,10 +88,12 @@ function addCircle() {
       allnumbers.appendChild(circle);
     } else {
       alert("Больше нет элементов для добавления!");
+      clear();
     }
   };
     console.log(numbersArray)
     addCircle()
+    showRestNumber()
 });
 
 

@@ -48,10 +48,16 @@ html {
   text-transform: uppercase;
 }
 
-.subtitle {
+.restnumber {
   font-size: 22px;
   color: #bd7850;
   font-weight: 400;
+}
+
+.totalnum {
+  font-size: 19px;
+  color: #bd7850;
+  font-weight: 300;
 }
 
 .numberplace {
