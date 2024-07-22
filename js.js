@@ -58,11 +58,6 @@ while (numbersArray.length < 100) {
     printAndAddRandomNumber();
 };
 
-//Функция очистки поля вывода
-function clear() {
-    location.reload();
-}
-
 // Функция показа количества оставшихся шаров
 function showRestNumber() { 
    restNumber.innerHTML = --restnum;
@@ -85,8 +80,8 @@ function addCircle() {
       circle.textContent = numbersArray.shift(); // Берем и удаляем первый элемент массива
       allnumbers.appendChild(circle);
     } else {
-      alert("Больше нет элементов для добавления!");
-      clear();
+      alert("Больше нет шаров в барабане!Конец игры!");
+      location.reload();
     }
   };
     console.log(numbersArray);
@@ -94,12 +89,10 @@ function addCircle() {
     showRestNumber();
 });
 
-
-
 //Очистка выпавшего номера
 reset.addEventListener('click', () => {
-    playAudio2()
-    clear();
+    location.reload();
+    playAudio2()    
 });
 
 console.log(numbersArray)
