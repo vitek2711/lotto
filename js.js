@@ -60,9 +60,7 @@ while (numbersArray.length < 100) {
 
 //Функция очистки поля вывода
 function clear() {
-    number.innerHTML = '';
-    allnumbers.innerHTML = '';
-    shownAllNumbers.length = 0;
+    location.reload();
 }
 
 // Функция показа количества оставшихся шаров
@@ -91,9 +89,9 @@ function addCircle() {
       clear();
     }
   };
-    console.log(numbersArray)
-    addCircle()
-    showRestNumber()
+    console.log(numbersArray);
+    addCircle();
+    showRestNumber();
 });
 
 
