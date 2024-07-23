@@ -70,6 +70,18 @@ button.addEventListener("click", () => {
     // Показ выпавшего номера по щелчку
     number.innerHTML = numbersArray[0];
 
+    // Добавляем вращние к выпавшему номеру
+    number.classList.add('newanimation');
+
+    // Отслеживаем окончание анимации
+    number.addEventListener("animationend", AnimationHandler, false);
+
+function AnimationHandler () {
+  // Удаляем класс с анимацией
+  number.classList.remove('newanimation');
+  
+};
+
     // Функция для добавления нового кружка с элементом массива
 function addCircle() {
     // Проверяем, есть ли еще элементы в массиве
@@ -81,9 +93,11 @@ function addCircle() {
       allnumbers.appendChild(circle);
     } else {
       alert("Больше нет шаров в барабане!Конец игры!");
+      //Перезагрузка страницы по нажатию на кнопку "сброс"
       location.reload();
     }
   };
+  
     console.log(numbersArray);
     addCircle();
     showRestNumber();

@@ -78,6 +78,19 @@ html {
   text-align: center;
 }
 
+.newanimation {
+  animation: spin1 2s linear forwards;
+}
+
+@keyframes spin1 {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
 .button {
   display: flex;
   user-select: none;
