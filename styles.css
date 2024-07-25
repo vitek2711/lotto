@@ -23,24 +23,6 @@ html {
   position: absolute;
 }
 
-/* Numbers block */
-.numbers-block {
-  background-color: #d4d3d3;
-  border: 5px solid #bd7850;
-  border-radius: 10px;
-  opacity: 95%;
-  animation: showBlock .7s linear forwards;
-}
-
-@keyframes showBlock {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 /* Исчезание блока */
 .toggle {
   display: none;  
@@ -175,6 +157,24 @@ html {
   transform: scale(0.9);
 }
 
+/* Numbers block */
+.numbers-block {
+  background-color: #d4d3d3;
+  border: 5px solid #bd7850;
+  border-radius: 10px;
+  opacity: 95%;
+  animation: showBlock .7s linear forwards;
+}
+
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* circle */
 .circle {
   width: 30px;
@@ -224,8 +224,6 @@ html {
   font-size: 25px;
   color: #bd7850;
 }
-
-
 
 /* adaptive */
 
