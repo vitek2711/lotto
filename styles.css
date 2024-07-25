@@ -13,10 +13,6 @@ html {
   background: url(background.jpg) 75% 123%;
 }
 
-.footer {
-  position: fixed;
-}
-
 .wrapper {
   display: flex;
   justify-content: space-around;
@@ -27,10 +23,33 @@ html {
   position: absolute;
 }
 
+/* Numbers block */
+.numbers-block {
+  background-color: #d4d3d3;
+  border: 5px solid #bd7850;
+  border-radius: 10px;
+  opacity: 95%;
+  animation: showBlock .7s linear forwards;
+}
+
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Исчезание блока */
+.toggle {
+  display: none;  
+}
+
 .wiget {
   display: flex;
-  width: 300px;
-  height: 500px;
+  width: 320px;
+  height: 520px;
   padding: 30px;
   background-color: #d4d3d3;
   flex-direction: column;
@@ -84,10 +103,10 @@ html {
 
 @keyframes spin1 {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -143,12 +162,17 @@ html {
   transform: scale(0.9);
 }
 
-/* Numbers block */
-.numbers-block {
-  background-color: #d4d3d3;
-  border: 5px solid #bd7850;
-  border-radius: 10px;
-  opacity: 95%;
+.left-right {
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding-top: 20px;
+  cursor: pointer;
+  color: #072202;
+}
+
+.left-right:active {
+  transform: scale(0.9);
 }
 
 /* circle */
@@ -169,10 +193,10 @@ html {
 
 @keyframes spin {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -200,6 +224,8 @@ html {
   font-size: 25px;
   color: #bd7850;
 }
+
+
 
 /* adaptive */
 

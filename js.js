@@ -1,11 +1,13 @@
 'use strict'
 
 // Variables
-var audio1 = new Audio('tihiy-slabyiy-schelchok.mp3');
-var audio2 = new Audio('korotkiy-schelchok-pistoletnoy-oboymyi.mp3')
+const audio1 = new Audio('tihiy-slabyiy-schelchok.mp3');
+const audio2 = new Audio('korotkiy-schelchok-pistoletnoy-oboymyi.mp3');
+const applodies = new Audio('applodies.mp3');
 const button = document.querySelector('.button');
-let number = document.querySelector('.number');
 const reset = document.querySelector('.reset');
+const leftRight = document.querySelector('.left-right');
+let number = document.querySelector('.number');
 let allnumbers = document.querySelector('.allnumbers');
 let restNumber = document.querySelector('.restnumber');
 let restnum = 100;
@@ -46,7 +48,6 @@ function playAudio2() {
     audio2.play();
 }
 
-
 //Запись выпавшего номера в стек выпавших номеров
 function addShownNumbersInArray() {
     let shownNumber = numbersArray[0];
@@ -59,14 +60,19 @@ while (numbersArray.length < 100) {
 };
 
 // Функция показа количества оставшихся шаров
-function showRestNumber() { 
-   restNumber.innerHTML = --restnum;
+function showRestNumber() {
+    restNumber.innerHTML = --restnum;
 };
 
 // Показ выпавшего номера
 button.addEventListener("click", () => {
+    if (numbersArray.length === 100) {
+        applodies.play();
+    }
+
     // Щелчок по нажатию
     playAudio1();
+
     // Показ выпавшего номера по щелчку
     number.innerHTML = numbersArray[0];
 
@@ -76,28 +82,25 @@ button.addEventListener("click", () => {
     // Отслеживаем окончание анимации
     number.addEventListener("animationend", AnimationHandler, false);
 
-function AnimationHandler () {
-  // Удаляем класс с анимацией
-  number.classList.remove('newanimation');
-  
-};
+    function AnimationHandler() {
+        // Удаляем класс с анимацией
+        number.classList.remove('newanimation');
+    };
 
     // Функция для добавления нового кружка с элементом массива
-function addCircle() {
-    // Проверяем, есть ли еще элементы в массиве
-    if (numbersArray.length > 0) {
-      // Создаем новый кружок
-      let circle = document.createElement('div');
-      circle.classList.add('circle');
-      circle.textContent = numbersArray.shift(); // Берем и удаляем первый элемент массива
-      allnumbers.appendChild(circle);
-    } else {
-      alert("Больше нет шаров в барабане!Конец игры!");
-      //Перезагрузка страницы по нажатию на кнопку "сброс"
-      location.reload();
-    }
-  };
-  
+    function addCircle() {
+        // Проверяем, есть ли еще элементы в массиве
+        if (numbersArray.length > 0) {
+            // Создаем новый кружок
+            let circle = document.createElement('div');
+            circle.classList.add('circle');
+            circle.textContent = numbersArray.shift(); // Берем и удаляем первый элемент массива
+            allnumbers.appendChild(circle);
+        } if (numbersArray.length === 0) {
+            alert("Больше нет шаров в барабане!Конец игры!");
+        }
+    };
+
     console.log(numbersArray);
     addCircle();
     showRestNumber();
@@ -106,15 +109,15 @@ function addCircle() {
 //Очистка выпавшего номера
 reset.addEventListener('click', () => {
     location.reload();
-    playAudio2()    
+});
+
+const numBlock = document.querySelector('.numbers-block');
+
+//Появление/исчезание второго экрана с выпавшими шарами по нажатию на кнопку
+leftRight.addEventListener("click", () => {
+    playAudio2();
+    numBlock.classList.toggle('toggle')
 });
 
 console.log(numbersArray)
 console.log(shownAllNumbers)
-
-
-
-
-
-
-
