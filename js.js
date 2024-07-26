@@ -4,6 +4,7 @@
 const audio1 = new Audio('tihiy-slabyiy-schelchok.mp3');
 const audio2 = new Audio('korotkiy-schelchok-pistoletnoy-oboymyi.mp3');
 const applodies = new Audio('applodies.mp3');
+const fon = new Audio('sportloto.mp3');
 const button = document.querySelector('.button');
 const reset = document.querySelector('.reset');
 const leftRight = document.querySelector('.left-right');
@@ -15,6 +16,8 @@ let restNumber = document.querySelector('.restnumber');
 let restnum = 100;
 restNumber.innerHTML = '100';
 let totalnum = document.querySelector('.totalnum');
+let play = document.querySelector('.play');
+let stopAudio = document.querySelector('.stop');
 
 //ARRAYS//
 // Создаем пустой массив для хранения выпавших чисел
@@ -95,6 +98,7 @@ button.addEventListener("click", () => {
 
 //Очистка выпавшего номера по нажатию на кнопку
 reset.addEventListener('click', () => {
+    audio2.play();
     location.reload();
 });
 
@@ -105,5 +109,18 @@ leftRight.addEventListener("click", () => {
     numBlock.classList.toggle('toggle')
 });
 
+//Настройка воспроизведения фоновой музыки по клику
+play.addEventListener('click', () => {
+    audio2.play();
+    fon.play().catch(error => {
+        console.log('Autoplay was prevented:', error);
+    });
+});
+
+//Настройка остановки фоновой музыки по клику
+stopAudio.addEventListener('click', () => {
+    audio2.play();
+    fon.pause();
+});
 console.log(numbersArray)
 console.log(shownAllNumbers)

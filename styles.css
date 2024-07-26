@@ -124,10 +124,11 @@ html {
 .btns {
   display: flex;
   width: 100%;
+  align-items: center;
   justify-content: space-between;
 }
 
-.reset {
+/* .reset {
   display: flex;
   cursor: pointer;
   user-select: none;
@@ -148,18 +149,17 @@ html {
 .reset:active {
   background-color: rgb(204, 2, 46);
   transform: scale(0.9);
-}
+} */
 
-.left-right {
+.left-right, .play, .stop, .reset{
   display: block;
   width: 40px;
   height: 40px;
-  padding-top: 20px;
   cursor: pointer;
   color: #072202;
 }
 
-.left-right:active {
+.left-right:active, .play:active, .stop:active, .reset:active {
   transform: scale(0.9);
 }
 
@@ -245,6 +245,8 @@ html {
 
 @media (max-width: 600px) {
   .wrapper {
+    width: 100%;
+    min-height: 100%;
     flex-direction: column-reverse;
     top: 0;
     align-items: center;
