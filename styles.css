@@ -179,6 +179,7 @@ html {
 .circle {
   width: 30px;
   height: 30px;
+  border: 1px solid #5a3504;
   border-radius: 50%;
   background-color: rgb(189, 189, 8);
   display: inline-flex;
@@ -223,6 +224,15 @@ html {
   border-radius: 5px;
   font-size: 25px;
   color: #bd7850;
+}
+
+.copyright {
+  width: 100%;
+  font-size: 12px;
+  opacity: .7;
+  color: #333533;
+  text-align: center;
+  padding: 5px;
 }
 
 /* adaptive */
