@@ -121,6 +121,12 @@ html {
   transform: scale(0.9);
 }
 
+.btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .reset {
   display: flex;
   cursor: pointer;
